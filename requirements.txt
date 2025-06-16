@@ -1,0 +1,6 @@
+faiss_cpu==1.11.0
+numpy==2.3.0
+sentence_transformers==4.1.0
+torch==2.5.1
+datasets==3.6.0
+accelerate>=0.26.0
