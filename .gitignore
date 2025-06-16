@@ -6,6 +6,10 @@ dist/
 wheels/
 *.egg-info
 output/
+checkpoints/
 
 # Virtual environments
 .venv
+
+# Secret files
+*.env
