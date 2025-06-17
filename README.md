@@ -46,6 +46,15 @@ Visit the [Raggie API Documentation](https://yamaceay.github.io/raggie/raggie.ht
 
 ## Installation
 
+### For end-users
+
+1. Install the package from PyPI:
+   ```bash
+   uv pip install raggie
+   ```
+
+### For developers
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/yamaceay/raggie.git
