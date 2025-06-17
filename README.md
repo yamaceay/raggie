@@ -19,7 +19,7 @@ Raggie is a Python-based project for training, retrieving, and visualizing sente
 - **Latent Retriever**: Retrieve the most relevant documents for a given query using FAISS for efficient similarity search.
 - **Evaluation**: Evaluate retrieval performance using rank-based metrics.
 - **t-SNE Visualization**: Visualize embeddings in 2D space with clustering and annotation support.
-- **Abstract Data Handling**: Extend or customize data handling by implementing the `AbstractRaggieData` interface.
+- **Customized Data Handling**: Extend or customize data handling by using the abstract classes.
 
 Visit the [Raggie API Documentation](https://yamaceay.github.io/raggie/raggie.html) for more detailed information.
 
@@ -46,22 +46,10 @@ Visit the [Raggie API Documentation](https://yamaceay.github.io/raggie/raggie.ht
 
 ## Installation
 
-### For end-users
+### Recommended: Using `uv`
 
-1. Install the package from PyPI:
-   ```bash
-   uv pip install raggie
-   ```
+1. Install `uv` package manager:
 
-### For developers
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yamaceay/raggie.git
-   cd raggie
-   ```
-
-2. Install `uv` package manager:
     ```bash
     # On Unix-like systems (Linux, macOS)
     curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -72,26 +60,33 @@ Visit the [Raggie API Documentation](https://yamaceay.github.io/raggie/raggie.ht
 
     For other installation methods, visit [uv documentation](https://docs.astral.sh/uv/getting-started/installation/).
 
-3. Sync the dependencies using `uv`:
+### For end-users
+
+1. Install the package from PyPI:
    ```bash
-   uv sync
+   uv pip install raggie
    ```
 
-   This will ensure all dependencies are installed and locked to the versions specified in `uv.lock`.
-
-## Usage
-
-### Training the Model
-
-1. Prepare your training and evaluation data in JSONL format. Each line should be a JSON object with `key` and `value` fields. Currently, only unique `key` values are supported.
-
-   Example format:
-   ```json
-   {"key": "topic1", "value": "This is the text for topic 1."}
-   {"key": "topic2", "value": "This is the text for topic 2."}
+1. Test the installation by running the example script:
+   ```python
+   import raggie
+   print(raggie.__version__)
    ```
 
-### Basic Tutorial
+### For developers
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yamaceay/raggie.git
+   cd raggie
+   ```
+
+2. Test the example script [examples/user.py](https://github.com/yamaceay/raggie/blob/master/examples/user.py):
+   ```bash
+   uv run examples/user.py
+   ```
+    
+## Basic Usage
 
 Here's a step-by-step guide to using Raggie for training, retrieving, and visualizing embeddings:
 
@@ -115,9 +110,9 @@ Here's a step-by-step guide to using Raggie for training, retrieving, and visual
     ```
 
 3. Perform retrievals in different ways:
-    Raggie supports various retrieval methods, including using queries, keys, and content. Here are some examples.
+    Raggie supports various retrieval methods, including using document queries and keys. Here are some examples.
 
-    Given the following arguments:`
+    Given the following arguments:
 
     ```python
     key = "Dr. Xandor Quill"
@@ -133,7 +128,7 @@ Here's a step-by-step guide to using Raggie for training, retrieving, and visual
         # [('Dr. Xandor Quill', np.float32(0.29358667)), ('Coach Zenith Stormweaver', np.float32(1.3610729)), ('Librarian Pixel Stardust', np.float32(1.4311827)), ('Maestro Quasar Dreamweaver', np.float32(1.5779625)), ('Designer Shadow Prism', np.float32(1.6315038))]
     ```
 
-    In a similar way, you can retrieve entitis based on one entity key:
+    In a similar way, you can retrieve entities based on one entity key:
 
     ```python
         # Find similar documents using a key
@@ -151,29 +146,34 @@ Here's a step-by-step guide to using Raggie for training, retrieving, and visual
         # [('A deep-sea librarian who invented underwater chess which is now played by dolphins', np.float32(0.29358667)), ('Trains butterflies for underwater marathon racing', np.float32(1.3610729)), ('Catalogs books that write themselves when no one is looking', np.float32(1.4311827)), ('Conducts orchestras of wind-up toys and raindrops', np.float32(1.5779625)), ('Creates video games that can only be played while sleeping', np.float32(1.6315038))]
     ```
 
-    All these methods are set `return_all_scores=False` by default, which means they return keys instead of key - similarity score pairs.
+    All retrieval methods are set `return_all_scores=False` by default, so that they return keys instead of key - similarity score pairs.
 
-4. Evaluate and visualize:
+4. Evaluate retrieval performance:
+    ```python
+    # Check retrieval performance
+    rank = raggie.evaluate_rank(query, key)
+    # Rank of document for key 'Dr. Xandor Quill': 1
+    ```
+
+   The rank is the number of guesses it takes to find the correct document for the given query. A rank of 1 means the document was found on the first try. A high rank might indicate that the query embedding needs improvement.
+
+5. Evaluate and visualize:
     Use the `RaggiePlotter` class to visualize embeddings in 2D space using t-SNE. You can also cluster embeddings and annotate centroids with group names.
 
     ```python
     # Import for visualization
     from raggie.utils import RaggiePlotter
 
-    # Check retrieval performance
-    rank = raggie.evaluate_rank(query, key)
-    # Rank of document 'I am looking for a librarian who has specialized in underwater chess mostly played by dolphins' for key 'Dr. Xandor Quill': 1
-
     # Visualize embeddings
+    keys = ["Dr. Xandor Quill", "Coach Zenith Stormweaver", "Librarian Pixel Stardust", … more keys]
+
     plotter = RaggiePlotter(model)
     plotter.plot(keys, n_clusters=5)
     ```
 
 ![Raggie Visualization Example](https://raw.githubusercontent.com/yamaceay/raggie/refs/heads/master/assets/tsne.png)
 
-For a complete working example, check `examples/user.py` in the project directory.
-
-### Extending Data Handling
+## Extending Data Handling
 
 The current implementation uses abstract classes for allowing custom functionality in data handling, model training and visualization. You can extend the functionality by implementing your own logic by respecting the interfaces provided in each file.
 
@@ -183,11 +183,49 @@ The types can be imported as follows:
 from raggie.types import RaggieDataClass, RaggieModelClass, RaggiePlotterClass
 ```
 
-## Example Data
+The API specification is available in [Raggie API Documentation](https://yamaceay.github.io/raggie/raggie.html).
 
-The project includes example training and evaluation data in the `data` directory:
+## Data Preparation
+
+The current project includes example training and evaluation data in the `data` directory:
 - `data/user_train.jsonl`: Training data with paired topics and texts.
 - `data/user_test.jsonl`: Evaluation data for testing retrieval performance.
+
+Here's how you can bring your own training and evaluation data for your use case:
+
+1. Example JSONL format:
+   ```json
+   {"key": "topic1", "value": "This is the text for topic 1."}
+   {"key": "topic2", "value": "This is the text for topic 2."}
+   ```
+
+2. Example CSV format:
+   ```csv
+   key,value
+   topic1,This is the text for topic 1.
+   topic2,This is the text for topic 2.
+   ```
+
+3. Example JSON format:
+   ```json
+   [
+       {"key": "topic1", "value": "This is the text for topic 1."},
+       {"key": "topic2", "value": "This is the text for topic 2."}
+   ]
+   ```
+
+Store the data in a directory like `data/<use_case>` so that you'll be able to pass the directory path to the data loader class later.
+
+The default data loader automatically detects the files with `_train.<ext>`, `_test.<ext>`, and `_val.<ext>` suffixes, where `<ext>` can be `csv`, `jsonl` or `json`.
+
+## Output Logging
+
+The trained model and related configurations are saved per default in the `output` directory. This includes:
+- Model weights (`model.safetensors`)
+- Tokenizer configuration (`tokenizer.json`, `vocab.txt`)
+- Additional metadata files.
+
+Since the data files are expected to be large, the output directory is not included in the source repository.
 
 ## Dependencies
 
@@ -208,13 +246,6 @@ All dependencies are managed using `uv` and listed in `requirements.txt` and `uv
 
 This project requires Python 3.12. Ensure you have the correct version installed.
 
-## Output
-
-The trained model and related configurations are saved per default in the `output` directory. This includes:
-- Model weights (`model.safetensors`)
-- Tokenizer configuration (`tokenizer.json`, `vocab.txt`)
-- Additional metadata files.
-
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
@@ -226,3 +257,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgments
 
 This project uses the [Sentence Transformers](https://www.sbert.net/) library for training and embedding generation, and [FAISS](https://github.com/facebookresearch/faiss) for efficient similarity search.
+
+## Thank you for using Raggie!
