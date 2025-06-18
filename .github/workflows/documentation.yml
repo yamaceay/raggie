@@ -16,8 +16,13 @@ jobs:
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
           
+      - name: Setup virtual environment
+        run: |
+          uv venv
+          
       - name: Install dependencies
         run: |
+          . .venv/bin/activate
           uv pip install sphinx sphinx_rtd_theme myst_parser
           if [ -f requirements.txt ]; then uv pip install -r requirements.txt; fi
           
