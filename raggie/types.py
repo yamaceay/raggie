@@ -1,8 +1,27 @@
 from abc import ABC, abstractmethod
-from typing import List, Tuple, Optional, Union
+from typing import List, Tuple, Optional, Union, Iterator
 import numpy
 
 class RaggieDataClass(ABC):
+    """
+    Abstract base class for Raggie data handling.
+
+    This class defines the interface for iterating over paired data.
+    Users can implement their own data handling logic by extending this class.
+    """
+
+    @property
+    @abstractmethod
+    def data(self) -> List[Tuple[str, str]]:
+        """
+        Get the paired data.
+
+        Returns:
+            List[Tuple[str, str]]: A list of tuples containing paired data.
+        """
+        pass
+
+class RaggieDataLoaderClass(ABC):
     """
     Abstract base class for Raggie data handling.
 
@@ -13,36 +32,37 @@ class RaggieDataClass(ABC):
 
     @property
     @abstractmethod
-    def train_data(self) -> List[Tuple[str, str]]:
+    def train(self) -> RaggieDataClass:
         """
         Load and return the training data.
 
         Returns:
-            List[Tuple[str, str]]: A list of tuples containing paired data.
+            RaggieDataClass: An instance of RaggieDataClass containing the training data.
         """
         pass
 
     @property
     @abstractmethod
-    def test_data(self) -> List[Tuple[str, str]]:
+    def test(self) -> RaggieDataClass:
         """
         Load and return the testing data.
 
         Returns:
-            List[Tuple[str, str]]: A list of tuples containing paired data.
+            RaggieDataClass: An instance of RaggieDataClass containing the testing data.
         """
         pass
 
     @property
     @abstractmethod
-    def val_data(self) -> List[Tuple[str, str]]:
+    def val(self) -> RaggieDataClass:
         """
         Load and return the validation data.
 
         Returns:
-            List[Tuple[str, str]]: A list of tuples containing paired data.
+            RaggieDataClass: An instance of RaggieDataClass containing the validation data.
         """
         pass
+
 
 class RaggieModelClass(ABC):
     """

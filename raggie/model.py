@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, Optional
 import random
 
 import numpy as np
@@ -41,15 +41,16 @@ class RaggieModel(RaggieModelClass):
         self.train_examples: List[InputExample] = []
         self.val_examples: List[InputExample] = []
 
-    def train(self, data: RaggieDataClass, epochs: int = 5) -> None:
+    def train(self, train_data: RaggieDataClass, val_data: Optional[RaggieDataClass] = None, epochs: int = 5) -> None:
         """
         Train the model using the provided data.
 
         Args:
-            data (RaggieDataClass): The data handler providing training and validation data.
+            train_data (RaggieDataClass): The data handler providing training data.
+            val_data (Optional[RaggieDataClass]): The data handler providing validation data.
             epochs (int): Number of training epochs.
         """
-        self._load_data(data)
+        self._load_data(train_data, val_data)
 
         train_dataloader = DataLoader(self.train_examples, shuffle=True, batch_size=16)
         train_loss = losses.CosineSimilarityLoss(self.model)
@@ -108,24 +109,22 @@ class RaggieModel(RaggieModelClass):
         rel = {f"q{i}": [f"d{i}"] for i in range(len(pairs))}
         return InformationRetrievalEvaluator(queries, docs, rel, name=name)
 
-    def _load_data(self, data: RaggieDataClass, *args, **kwargs) -> None:
+    def _load_data(self, train_data: RaggieDataClass, val_data: Optional[RaggieDataClass] = None, *args, **kwargs) -> None:
         """
         Load training and validation data from the data handler.
 
         Args:
-            data (RaggieDataClass): The data handler providing training and validation data.
+            train_data (RaggieDataClass): The data handler providing training data.
+            val_data (Optional[RaggieDataClass]): The data handler providing validation data.
         """
-        train_data = data.train_data
-        val_data = data.val_data
-
-        self.train_examples = [InputExample(texts=[x[0], x[1]], label=1.0) for x in train_data]
-        self.val_examples = [InputExample(texts=[x[0], x[1]], label=1.0) for x in val_data]
-
+        self.train_examples = [InputExample(texts=[x[0], x[1]], label=1.0) for x in train_data.data]
         train_examples_negative = self._sample_negatives(self.train_examples, *args, **kwargs)
         self.train_examples.extend(train_examples_negative)
 
-        val_examples_negative = self._sample_negatives(self.val_examples, *args, **kwargs)
-        self.val_examples.extend(val_examples_negative)
+        if val_data:
+            self.val_examples = [InputExample(texts=[x[0], x[1]], label=1.0) for x in val_data.data]
+            val_examples_negative = self._sample_negatives(self.val_examples, *args, **kwargs)
+            self.val_examples.extend(val_examples_negative)
 
     def _sample_negatives(self, examples: List[InputExample], num_negatives=3) -> List[InputExample]:
         """

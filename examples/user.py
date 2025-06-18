@@ -1,4 +1,4 @@
-from raggie import Raggie, RaggieModel, RaggieData
+from raggie import Raggie, RaggieModel, RaggieDataLoader
 from raggie.utils import RaggiePlotter
 
 # from raggie.types import RaggieDataClass, RaggieModelClass, RaggiePlotterClass
@@ -10,11 +10,12 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output_dir", type=str, default="output/user", help="Path to output directory.")
     args = parser.parse_args()
 
-    data = RaggieData(data_dir=args.data_dir)
+    dataloader = RaggieDataLoader(data_dir=args.data_dir)
+    train_data, val_data = dataloader.train, dataloader.val
     model = RaggieModel(output_dir=args.output_dir)
-    model.train(data)
+    model.train(train_data, val_data)
 
-    raggie = Raggie(model, data)
+    raggie = Raggie(model, val_data)
 
     key = "Dr. Xandor Quill"
     query = "I am looking for a librarian who has specialized in underwater chess mostly played by dolphins"
@@ -61,6 +62,5 @@ if __name__ == "__main__":
 
     # Visualize key embeddings
     plotter = RaggiePlotter(model)
-    train_data = data.train_data
-    keys = [pair[0] for pair in train_data]
+    keys = [pair[0] for pair in train_data.data]
     plotter.plot(keys, n_clusters=5)

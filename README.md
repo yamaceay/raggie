@@ -70,7 +70,7 @@ Visit the [Raggie API Documentation](https://yamaceay.github.io/raggie/raggie.ht
 1. Test the installation by running the example script:
    ```python
    import raggie
-   print(raggie.__version__)
+   print(raggie)
    ```
 
 ### For developers
@@ -90,84 +90,68 @@ Visit the [Raggie API Documentation](https://yamaceay.github.io/raggie/raggie.ht
 
 Here's a step-by-step guide to using Raggie for training, retrieving, and visualizing embeddings:
 
-1. First, initialize the core components:
-    You can use the `RaggieData` class to load your data and the `RaggieModel` class to work with the model.
-
+1. Create a script with command line arguments:
     ```python
-    from raggie import Raggie, RaggieModel, RaggieData
+    import argparse
+    from raggie import Raggie, RaggieModel, RaggieDataLoader
+    from raggie.utils import RaggiePlotter
 
-    # Set up data and model paths
-    data = RaggieData(data_dir="data/user")
-    model = RaggieModel(output_dir="output/user")
+    parser = argparse.ArgumentParser(description="Train and evaluate a latent space model.")
+    parser.add_argument("-d", "--data_dir", type=str, default="data/user", help="Path to data directory.")
+    parser.add_argument("-o", "--output_dir", type=str, default="output/user", help="Path to output directory.")
+    args = parser.parse_args()
     ```
 
-2. Train the model:
-    Raggie requires training data in the form of paired topics and texts. You can use the `RaggieData` class to load your data and the `RaggieModel` class to train the model.
-
+2. Initialize components and train:
     ```python
-    model.train(data)
-    raggie = Raggie(model, data)
+    dataloader = RaggieDataLoader(data_dir=args.data_dir)
+    train_data, val_data = dataloader.train, dataloader.val
+    model = RaggieModel(output_dir=args.output_dir)
+    model.train(train_data, val_data)
+
+    raggie = Raggie(model, val_data)
     ```
 
-3. Perform retrievals in different ways:
-    Raggie supports various retrieval methods, including using document queries and keys. Here are some examples.
-
-    Given the following arguments:
-
+3. Set up example query and key:
     ```python
     key = "Dr. Xandor Quill"
     query = "I am looking for a librarian who has specialized in underwater chess mostly played by dolphins"
     ```
 
-    You can also retrieve entities based on a query:
+4. Perform different types of retrievals:
 
     ```python
-        # Retrieve documents based on a query
-        results = raggie.retrieve([query], return_all_scores=True)
+    # Retrieve keys based on query
+    results = raggie.retrieve([query], return_all_scores=True)
+    print(f"Retrieved keys by '{query}':")
+    for result in results[0]:
+        name, score = result
+        print(f"Key: {name}, Score: {score}")
 
-        # [('Dr. Xandor Quill', np.float32(0.29358667)), ('Coach Zenith Stormweaver', np.float32(1.3610729)), ('Librarian Pixel Stardust', np.float32(1.4311827)), ('Maestro Quasar Dreamweaver', np.float32(1.5779625)), ('Designer Shadow Prism', np.float32(1.6315038))]
+    # Find similar keys
+    results = raggie.most_similar(keys=[key], return_all_scores=True)
+    print(f"Retrieved keys by '{key}':")
+    for result in results[0]:
+        name, score = result
+        print(f"Key: {name}, Score: {score}")
+
+    # Find similar documents
+    results = raggie.most_similar(queries=[query], return_all_scores=True)
+    print(f"Retrieved documents by '{query}':")
+    for result in results[0]:
+        doc, score = result
+        print(f"Document: {doc}, Score: {score}")
     ```
 
-    In a similar way, you can retrieve entities based on one entity key:
-
-    ```python
-        # Find similar documents using a key
-        similar_keys = raggie.most_similar(keys=[key], return_all_scores=True)
-
-        # [('Dr. Xandor Quill', np.float32(7.7822574e-13)), ('Dr. Echo Starwhisper', np.float32(1.3583667)), ('Artist Zephyr Clockwork', np.float32(1.3616264)), ('Maestro Quasar Dreamweaver', np.float32(1.5282866)), ('Trainer Nebula Sparksmith', np.float32(1.5660846))]
-    ```
-
-    You can also retrieve documents based on a query:
-
-    ```python
-        # Find similar documents using content
-        similar_docs = raggie.most_similar(queries=[query], return_all_scores=True)
-
-        # [('A deep-sea librarian who invented underwater chess which is now played by dolphins', np.float32(0.29358667)), ('Trains butterflies for underwater marathon racing', np.float32(1.3610729)), ('Catalogs books that write themselves when no one is looking', np.float32(1.4311827)), ('Conducts orchestras of wind-up toys and raindrops', np.float32(1.5779625)), ('Creates video games that can only be played while sleeping', np.float32(1.6315038))]
-    ```
-
-    All retrieval methods are set `return_all_scores=False` by default, so that they return keys instead of key - similarity score pairs.
-
-4. Evaluate retrieval performance:
+5. Evaluate and visualize:
     ```python
     # Check retrieval performance
     rank = raggie.evaluate_rank(query, key)
-    # Rank of document for key 'Dr. Xandor Quill': 1
-    ```
-
-   The rank is the number of guesses it takes to find the correct document for the given query. A rank of 1 means the document was found on the first try. A high rank might indicate that the query embedding needs improvement.
-
-5. Evaluate and visualize:
-    Use the `RaggiePlotter` class to visualize embeddings in 2D space using t-SNE. You can also cluster embeddings and annotate centroids with group names.
-
-    ```python
-    # Import for visualization
-    from raggie.utils import RaggiePlotter
+    print(f"Rank of document '{query}' for key '{key}': {rank}")
 
     # Visualize embeddings
-    keys = ["Dr. Xandor Quill", "Coach Zenith Stormweaver", "Librarian Pixel Stardust", … more keys]
-
     plotter = RaggiePlotter(model)
+    keys = [pair[0] for pair in train_data.data]
     plotter.plot(keys, n_clusters=5)
     ```
 

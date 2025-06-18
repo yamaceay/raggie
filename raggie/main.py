@@ -10,9 +10,8 @@ class Raggie:
         self.model = model
         self.data = data
 
-        self.key_value_pairs = self.data.train_data
-        self.keys = [pair[0] for pair in self.key_value_pairs]
-        self.values = [pair[1] for pair in self.key_value_pairs]
+        self.keys = [pair[0] for pair in self.data.data]
+        self.values = [pair[1] for pair in self.data.data]
 
         embedding_dim = self.model.model.get_sentence_embedding_dimension()
         self.key_index = faiss.IndexFlatL2(embedding_dim)
