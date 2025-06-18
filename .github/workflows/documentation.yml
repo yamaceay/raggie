@@ -11,18 +11,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-      - name: Install requirements.txt
+      
+      - name: Install uv
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          
       - name: Install dependencies
         run: |
-          pip install sphinx sphinx_rtd_theme myst_parser
+          uv pip install sphinx sphinx_rtd_theme myst_parser
+          if [ -f requirements.txt ]; then uv pip install -r requirements.txt; fi
+          
       - name: Install raggie package
         run: |
-          pip install -e .
+          uv pip install -e .
+          
       - name: Sphinx build
         run: |
           sphinx-build docs/source docs/build/html
+          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
