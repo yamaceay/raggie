@@ -32,6 +32,7 @@ jobs:
           
       - name: Sphinx build
         run: |
+          . .venv/bin/activate
           sphinx-build docs/source docs/build/html
           
       - name: Deploy to GitHub Pages
