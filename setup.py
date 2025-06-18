@@ -15,7 +15,7 @@ requires = [
 
 setup(
     name="raggie",
-    version="0.1.4",
+    version="0.2.0",
     url='https://yamaceay.github.io/raggie/raggie.html',
     author="Yamac Eren Ay",
     author_email="yamacerenay2001@gmail.com",
