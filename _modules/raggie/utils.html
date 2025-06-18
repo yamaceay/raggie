@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>raggie.utils &mdash; Raggie 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Raggie
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">raggie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../raggie.html">raggie package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.data">raggie.data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.data.RaggieData"><code class="docutils literal notranslate"><span class="pre">RaggieData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.data.RaggieDataLoader"><code class="docutils literal notranslate"><span class="pre">RaggieDataLoader</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.main">raggie.main module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.main.Raggie"><code class="docutils literal notranslate"><span class="pre">Raggie</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.model">raggie.model module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.model.RaggieModel"><code class="docutils literal notranslate"><span class="pre">RaggieModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.types">raggie.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieDataClass"><code class="docutils literal notranslate"><span class="pre">RaggieDataClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieDataLoaderClass"><code class="docutils literal notranslate"><span class="pre">RaggieDataLoaderClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieModelClass"><code class="docutils literal notranslate"><span class="pre">RaggieModelClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggiePlotterClass"><code class="docutils literal notranslate"><span class="pre">RaggiePlotterClass</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.utils">raggie.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.utils.RaggiePlotter"><code class="docutils literal notranslate"><span class="pre">RaggiePlotter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Raggie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">raggie.utils</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for raggie.utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.manifold</span><span class="w"> </span><span class="kn">import</span> <span class="n">TSNE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">RaggiePlotterClass</span>
+
+<div class="viewcode-block" id="RaggiePlotter">
+<a class="viewcode-back" href="../../raggie.html#raggie.utils.RaggiePlotter">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RaggiePlotter</span><span class="p">(</span><span class="n">RaggiePlotterClass</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Raggie plotter for visualizing keys using t-SNE and optional k-means clustering.</span>
+
+<span class="sd">    This class provides methods to reduce embeddings to 2D space and visualize</span>
+<span class="sd">    them with clustering and annotations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the RaggiePlotter instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model: The model used to encode keys into embeddings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+<div class="viewcode-block" id="RaggiePlotter.plot">
+<a class="viewcode-back" href="../../raggie.html#raggie.utils.RaggiePlotter.plot">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+             <span class="n">keys</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> 
+             <span class="n">perplexity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+             <span class="n">learning_rate</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span> 
+             <span class="n">n_iter_without_progress</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> 
+             <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> 
+             <span class="n">n_clusters</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">show</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+             <span class="n">save_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform t-SNE dimensionality reduction and visualize keys with optional k-means clustering.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            keys (List[str]): List of keys to visualize.</span>
+<span class="sd">            perplexity (Optional[float]): Perplexity parameter for t-SNE.</span>
+<span class="sd">            learning_rate (Union[float, str]): Learning rate for t-SNE.</span>
+<span class="sd">            n_iter_without_progress (int): Number of iterations without progress before stopping.</span>
+<span class="sd">            random_state (int): Random seed for reproducibility.</span>
+<span class="sd">            n_clusters (int): Number of clusters for k-means (optional).</span>
+<span class="sd">            show (bool): Whether to display the plot.</span>
+<span class="sd">            save_path (Optional[str]): Path to save the plot (optional).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+        <span class="n">embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">convert_to_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">perplexity</span> <span class="o">=</span> <span class="n">perplexity</span> <span class="ow">or</span> <span class="nb">min</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;At least two keys are required for t-SNE visualization.&quot;</span>
+
+        <span class="n">reduced_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_tsne_embeddings</span><span class="p">(</span>
+            <span class="n">embeddings</span><span class="p">,</span> <span class="n">perplexity</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">n_iter_without_progress</span><span class="p">,</span> <span class="n">random_state</span>
+        <span class="p">)</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">n_clusters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">cluster_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_perform_kmeans_clustering</span><span class="p">(</span><span class="n">reduced_embeddings</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">)</span>
+            <span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">)</span>
+            <span class="n">cluster_colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">cluster</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="n">cluster</span><span class="p">]</span> <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">)}</span>
+
+            <span class="n">centroids</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">group_names</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">):</span>
+                <span class="n">cluster_points</span> <span class="o">=</span> <span class="n">reduced_embeddings</span><span class="p">[</span><span class="n">cluster_labels</span> <span class="o">==</span> <span class="n">cluster</span><span class="p">]</span>
+                <span class="n">centroids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cluster_points</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+                <span class="n">group_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">))</span> <span class="k">if</span> <span class="n">cluster_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">cluster</span><span class="p">]))</span>
+            <span class="n">centroids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">centroids</span><span class="p">)</span>
+
+            <span class="n">scatter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_data_points</span><span class="p">(</span><span class="n">reduced_embeddings</span><span class="p">,</span> <span class="n">cluster_labels</span><span class="p">,</span> <span class="n">palette</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_plot_centroids</span><span class="p">(</span><span class="n">centroids</span><span class="p">,</span> <span class="n">group_names</span><span class="p">,</span> <span class="n">cluster_colors</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">scatter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_data_points</span><span class="p">(</span><span class="n">reduced_embeddings</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;t-SNE Visualization of Keys&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Dimension 1&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Dimension 2&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">save_path</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Plot saved to </span><span class="si">{</span><span class="n">save_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">fig</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_tsne_embeddings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                                 <span class="n">embeddings</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> 
+                                 <span class="n">perplexity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> 
+                                 <span class="n">learning_rate</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> 
+                                 <span class="n">n_iter_without_progress</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+                                 <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute t-SNE embeddings.&quot;&quot;&quot;</span>
+        <span class="n">tsne</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span>
+            <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">perplexity</span><span class="o">=</span><span class="n">perplexity</span><span class="p">,</span>
+            <span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
+            <span class="n">n_iter_without_progress</span><span class="o">=</span><span class="n">n_iter_without_progress</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_perform_kmeans_clustering</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                                   <span class="n">embeddings</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> 
+                                   <span class="n">n_clusters</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform k-means clustering on the embeddings.&quot;&quot;&quot;</span>
+        <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">n_clusters</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+        <span class="n">cluster_labels</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cluster_labels</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_plot_data_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                          <span class="n">reduced_embeddings</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                          <span class="n">hue</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> 
+                          <span class="n">palette</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot data points with optional clustering.&quot;&quot;&quot;</span>
+        <span class="n">scatter</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">reduced_embeddings</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">reduced_embeddings</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="n">hue</span><span class="o">=</span><span class="n">hue</span><span class="p">,</span>
+            <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span>
+            <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">scatter</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_plot_centroids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                        <span class="n">centroids</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> 
+                        <span class="n">group_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> 
+                        <span class="n">cluster_colors</span><span class="p">:</span> <span class="nb">dict</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot centroids with matching colors and annotate them.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">cluster</span><span class="p">,</span> <span class="n">centroid</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">centroids</span><span class="p">):</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                <span class="n">centroid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">centroid</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">cluster_colors</span><span class="p">[</span><span class="n">cluster</span><span class="p">]],</span>
+                <span class="n">s</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+                <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
+            <span class="p">)</span>
+
+            <span class="n">wrapped_group_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">group_names</span><span class="p">[</span><span class="n">cluster</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">))</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+                <span class="n">centroid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">centroid</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">wrapped_group_name</span><span class="p">,</span>
+                <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+            <span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yamac Eren Ay.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

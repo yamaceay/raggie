@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>raggie.model &mdash; Raggie 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Raggie
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">raggie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../raggie.html">raggie package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.data">raggie.data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.data.RaggieData"><code class="docutils literal notranslate"><span class="pre">RaggieData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.data.RaggieDataLoader"><code class="docutils literal notranslate"><span class="pre">RaggieDataLoader</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.main">raggie.main module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.main.Raggie"><code class="docutils literal notranslate"><span class="pre">Raggie</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.model">raggie.model module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.model.RaggieModel"><code class="docutils literal notranslate"><span class="pre">RaggieModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.types">raggie.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieDataClass"><code class="docutils literal notranslate"><span class="pre">RaggieDataClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieDataLoaderClass"><code class="docutils literal notranslate"><span class="pre">RaggieDataLoaderClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieModelClass"><code class="docutils literal notranslate"><span class="pre">RaggieModelClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggiePlotterClass"><code class="docutils literal notranslate"><span class="pre">RaggiePlotterClass</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.utils">raggie.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.utils.RaggiePlotter"><code class="docutils literal notranslate"><span class="pre">RaggiePlotter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Raggie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">raggie.model</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for raggie.model</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sentence_transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">SentenceTransformer</span><span class="p">,</span> <span class="n">InputExample</span><span class="p">,</span> <span class="n">losses</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sentence_transformers.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">InformationRetrievalEvaluator</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">RaggieModelClass</span><span class="p">,</span> <span class="n">RaggieDataClass</span>
+
+<div class="viewcode-block" id="RaggieModel">
+<a class="viewcode-back" href="../../raggie.html#raggie.model.RaggieModel">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RaggieModel</span><span class="p">(</span><span class="n">RaggieModelClass</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Default implementation of the RaggieModelClass.</span>
+
+<span class="sd">    This class provides methods for training, saving, and predicting embeddings</span>
+<span class="sd">    using a Sentence Transformer model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                 <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                 <span class="n">base_model_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                 <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the RaggieModel instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model_path (str): Path to a pre-trained model.</span>
+<span class="sd">            base_model_name (str): Name of the base model to use if no pre-trained model is provided.</span>
+<span class="sd">            output_dir (str): Directory to save the trained model.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span> <span class="o">=</span> <span class="n">output_dir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="o">=</span> <span class="n">model_path</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_model_name</span> <span class="o">=</span> <span class="n">base_model_name</span> <span class="ow">or</span> <span class="s2">&quot;sentence-transformers/all-MiniLM-L6-v2&quot;</span>
+
+        <span class="n">loaded_model_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_model_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">loaded_model_path</span><span class="p">)</span>
+    
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_examples</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">InputExample</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val_examples</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">InputExample</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="RaggieModel.train">
+<a class="viewcode-back" href="../../raggie.html#raggie.model.RaggieModel.train">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_data</span><span class="p">:</span> <span class="n">RaggieDataClass</span><span class="p">,</span> <span class="n">val_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">RaggieDataClass</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Train the model using the provided data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            train_data (RaggieDataClass): The data handler providing training data.</span>
+<span class="sd">            val_data (Optional[RaggieDataClass]): The data handler providing validation data.</span>
+<span class="sd">            epochs (int): Number of training epochs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_data</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">)</span>
+
+        <span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_examples</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">train_loss</span> <span class="o">=</span> <span class="n">losses</span><span class="o">.</span><span class="n">CosineSimilarityLoss</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+
+        <span class="n">evaluator</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">val_examples</span><span class="p">:</span>
+            <span class="n">evaluator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_evaluator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val_examples</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+            <span class="n">train_objectives</span><span class="o">=</span><span class="p">[(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">)],</span>
+            <span class="n">evaluator</span><span class="o">=</span><span class="n">evaluator</span><span class="p">,</span>
+            <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span>
+            <span class="n">output_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RaggieModel.save">
+<a class="viewcode-back" href="../../raggie.html#raggie.model.RaggieModel.save">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the trained model to the specified path.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RaggieModel.predict">
+<a class="viewcode-back" href="../../raggie.html#raggie.model.RaggieModel.predict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate embeddings for the given documents.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            docs (List[str]): List of documents to encode.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: Array of embeddings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">convert_to_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a pre-trained model from the given path.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model_path (str): Path to the pre-trained model.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">SentenceTransformer</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_evaluator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pairs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">InputExample</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InformationRetrievalEvaluator</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an evaluator for assessing the model&#39;s performance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            pairs (List[InputExample]): List of input examples for evaluation.</span>
+<span class="sd">            name (str): Name of the evaluator instance.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            InformationRetrievalEvaluator: Configured evaluator instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">queries</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;q</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="n">ex</span><span class="o">.</span><span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pairs</span><span class="p">)}</span>
+        <span class="n">docs</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;d</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="n">ex</span><span class="o">.</span><span class="n">texts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pairs</span><span class="p">)}</span>
+        <span class="n">rel</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;q</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;d</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">))}</span>
+        <span class="k">return</span> <span class="n">InformationRetrievalEvaluator</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">docs</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_data</span><span class="p">:</span> <span class="n">RaggieDataClass</span><span class="p">,</span> <span class="n">val_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">RaggieDataClass</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load training and validation data from the data handler.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            train_data (RaggieDataClass): The data handler providing training data.</span>
+<span class="sd">            val_data (Optional[RaggieDataClass]): The data handler providing validation data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_examples</span> <span class="o">=</span> <span class="p">[</span><span class="n">InputExample</span><span class="p">(</span><span class="n">texts</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">label</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_data</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+        <span class="n">train_examples_negative</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample_negatives</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_examples</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_examples</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">train_examples_negative</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">val_data</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">val_examples</span> <span class="o">=</span> <span class="p">[</span><span class="n">InputExample</span><span class="p">(</span><span class="n">texts</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">label</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">val_data</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+            <span class="n">val_examples_negative</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample_negatives</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val_examples</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">val_examples</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">val_examples_negative</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_sample_negatives</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">examples</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">InputExample</span><span class="p">],</span> <span class="n">num_negatives</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">InputExample</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sample negative examples for training using cosine similarity.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            examples (List[InputExample]): List of input examples.</span>
+<span class="sd">            num_negatives (int): Number of negative examples to sample for each positive example.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List[InputExample]: List of sampled negative examples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">texts_a</span> <span class="o">=</span> <span class="p">[</span><span class="n">ex</span><span class="o">.</span><span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">examples</span><span class="p">]</span>
+        <span class="n">texts_b</span> <span class="o">=</span> <span class="p">[</span><span class="n">ex</span><span class="o">.</span><span class="n">texts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">examples</span><span class="p">]</span>
+
+        <span class="n">embeddings_a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">texts_a</span><span class="p">,</span> <span class="n">convert_to_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">embeddings_b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">texts_b</span><span class="p">,</span> <span class="n">convert_to_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">positive_sims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">embeddings_a</span> <span class="o">*</span> <span class="n">embeddings_b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">embeddings_a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">embeddings_b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">min_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">positive_sims</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">positive_sims</span><span class="p">)</span>
+        <span class="n">max_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">positive_sims</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">positive_sims</span><span class="p">)</span>
+
+        <span class="n">new_pairs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">embeddings</span> <span class="o">=</span> <span class="n">embeddings_b</span>
+
+        <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">examples</span><span class="p">:</span>
+            <span class="n">query_emb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">([</span><span class="n">ex</span><span class="o">.</span><span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">convert_to_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">sims</span> <span class="o">=</span> <span class="n">embeddings</span> <span class="o">@</span> <span class="n">query_emb</span><span class="o">.</span><span class="n">T</span> <span class="o">/</span> <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">query_emb</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">sims</span> <span class="o">=</span> <span class="n">sims</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+            <span class="n">candidates</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">sim</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sim</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sims</span><span class="p">)</span> <span class="k">if</span> <span class="n">texts_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">ex</span><span class="o">.</span><span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">min_sim</span> <span class="o">&lt;</span> <span class="n">sim</span> <span class="o">&lt;</span> <span class="n">max_sim</span><span class="p">]</span>
+            <span class="n">sampled</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">),</span> <span class="n">num_negatives</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">sampled</span><span class="p">:</span>
+                <span class="n">new_pairs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputExample</span><span class="p">(</span><span class="n">texts</span><span class="o">=</span><span class="p">[</span><span class="n">ex</span><span class="o">.</span><span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">texts_b</span><span class="p">[</span><span class="n">idx</span><span class="p">]],</span> <span class="n">label</span><span class="o">=</span><span class="mf">0.0</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">new_pairs</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yamac Eren Ay.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

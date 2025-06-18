@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>raggie.types &mdash; Raggie 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Raggie
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">raggie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../raggie.html">raggie package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.data">raggie.data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.data.RaggieData"><code class="docutils literal notranslate"><span class="pre">RaggieData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.data.RaggieDataLoader"><code class="docutils literal notranslate"><span class="pre">RaggieDataLoader</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.main">raggie.main module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.main.Raggie"><code class="docutils literal notranslate"><span class="pre">Raggie</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.model">raggie.model module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.model.RaggieModel"><code class="docutils literal notranslate"><span class="pre">RaggieModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.types">raggie.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieDataClass"><code class="docutils literal notranslate"><span class="pre">RaggieDataClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieDataLoaderClass"><code class="docutils literal notranslate"><span class="pre">RaggieDataLoaderClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggieModelClass"><code class="docutils literal notranslate"><span class="pre">RaggieModelClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.types.RaggiePlotterClass"><code class="docutils literal notranslate"><span class="pre">RaggiePlotterClass</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie.utils">raggie.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../raggie.html#raggie.utils.RaggiePlotter"><code class="docutils literal notranslate"><span class="pre">RaggiePlotter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../raggie.html#module-raggie">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Raggie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">raggie.types</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for raggie.types</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Iterator</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+
+<div class="viewcode-block" id="RaggieDataClass">
+<a class="viewcode-back" href="../../raggie.html#raggie.types.RaggieDataClass">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RaggieDataClass</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract base class for Raggie data handling.</span>
+
+<span class="sd">    This class defines the interface for iterating over paired data.</span>
+<span class="sd">    Users can implement their own data handling logic by extending this class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the paired data.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List[Tuple[str, str]]: A list of tuples containing paired data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="RaggieDataLoaderClass">
+<a class="viewcode-back" href="../../raggie.html#raggie.types.RaggieDataLoaderClass">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RaggieDataLoaderClass</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract base class for Raggie data handling.</span>
+
+<span class="sd">    This class defines the interface for loading and managing training, testing,</span>
+<span class="sd">    and validation data. Users can implement their own data handling logic by</span>
+<span class="sd">    extending this class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RaggieDataClass</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the training data.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            RaggieDataClass: An instance of RaggieDataClass containing the training data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RaggieDataClass</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the testing data.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            RaggieDataClass: An instance of RaggieDataClass containing the testing data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">val</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RaggieDataClass</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the validation data.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            RaggieDataClass: An instance of RaggieDataClass containing the validation data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+
+
+<div class="viewcode-block" id="RaggieModelClass">
+<a class="viewcode-back" href="../../raggie.html#raggie.types.RaggieModelClass">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RaggieModelClass</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract base class for Raggie models.</span>
+
+<span class="sd">    This class defines the interface for training, saving, and predicting embeddings</span>
+<span class="sd">    using a machine learning model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RaggieModelClass.train">
+<a class="viewcode-back" href="../../raggie.html#raggie.types.RaggieModelClass.train">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">RaggieDataClass</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Train the model using the provided data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data (RaggieDataClass): The data handler providing training and validation data.</span>
+<span class="sd">            *args: Additional arguments for training.</span>
+<span class="sd">            **kwargs: Additional keyword arguments for training.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="RaggieModelClass.save">
+<a class="viewcode-back" href="../../raggie.html#raggie.types.RaggieModelClass.save">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the trained model to the output directory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="RaggieModelClass.predict">
+<a class="viewcode-back" href="../../raggie.html#raggie.types.RaggieModelClass.predict">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate embeddings for the given documents.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            docs (List[str]): List of documents to encode.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            numpy.ndarray: Array of embeddings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+</div>
+
+
+<div class="viewcode-block" id="RaggiePlotterClass">
+<a class="viewcode-back" href="../../raggie.html#raggie.types.RaggiePlotterClass">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RaggiePlotterClass</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract base class for Raggie plotters.</span>
+
+<span class="sd">    This class defines the interface for visualizing embeddings using t-SNE</span>
+<span class="sd">    and optional clustering.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RaggiePlotterClass.plot">
+<a class="viewcode-back" href="../../raggie.html#raggie.types.RaggiePlotterClass.plot">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+             <span class="n">keys</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> 
+             <span class="n">perplexity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+             <span class="n">learning_rate</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span> 
+             <span class="n">n_iter_without_progress</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> 
+             <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span>
+             <span class="n">n_clusters</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">show</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+             <span class="n">save_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Plot the t-SNE visualization of keys with optional clustering.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            keys (List[str]): List of keys to visualize.</span>
+<span class="sd">            perplexity (Optional[float]): Perplexity parameter for t-SNE.</span>
+<span class="sd">            learning_rate (Union[float, str]): Learning rate for t-SNE.</span>
+<span class="sd">            n_iter_without_progress (int): Number of iterations without progress before stopping.</span>
+<span class="sd">            random_state (int): Random seed for reproducibility.</span>
+<span class="sd">            n_clusters (int): Number of clusters for k-means (optional).</span>
+<span class="sd">            show (bool): Whether to display the plot.</span>
+<span class="sd">            save_path (Optional[str]): Path to save the plot (optional).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yamac Eren Ay.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
